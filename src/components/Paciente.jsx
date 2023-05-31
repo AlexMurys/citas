@@ -1,5 +1,5 @@
 const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
-    const { nombre, propietario, email, fecha, sintomas, id } = paciente
+    const { nombre, propietario, email, alta, sintomas, id } = paciente
 
     const handleEliminar = () => {
         const respuesta = confirm('Deseas eliminar este paciente?');
@@ -24,7 +24,7 @@ const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
             </p>
 
             <p className="font-bold mb-3 text-gray-700 uppercase">Fecha Alta: {''}
-                <span className="font-normal normal-case">{fecha}</span>
+                <span className="font-normal normal-case">{alta}</span>
             </p>
 
             <p className="font-bold mb-3 text-gray-700 uppercase">Síntomas: {''}
@@ -35,7 +35,7 @@ const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
                 <button
                     type="button"
                     className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg"
-                    onClick={() => setPaciente(paciente)}
+                    onClick={() => { setPaciente(paciente); console.log(paciente) }}
                 >Editar</button>
 
                 <button
